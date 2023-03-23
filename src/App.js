@@ -1,8 +1,16 @@
+import Chakalaka from "./components/Chakalaka";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <div>
-      Hello world
+      
+      <Chakalaka />
+
+      <br /> <br/>
+
+      <Counter />
+      
     </div>
   );
 }
