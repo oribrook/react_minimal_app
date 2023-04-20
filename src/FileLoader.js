@@ -1,5 +1,4 @@
-import React, { useCallback, useState } from 'react'
-import { useDropzone } from 'react-dropzone'
+import React, { useState } from 'react'
 
 function FileLoader() {
 
