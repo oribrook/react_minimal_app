@@ -8,7 +8,7 @@ function Navbar() {
     return (<>
         <nav className='navbar'>
 
-            <a onClick={() => {nav("/") }} className='site-title'> Car-BnB </a>
+            <a onClick={() => {nav("/") }} className='site-title'> פיצה מרוקו </a>
             
             <ul className='bar-list'>
                 <li className= {path == '/about' ? 'active' : ""}>

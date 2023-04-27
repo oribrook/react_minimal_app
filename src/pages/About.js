@@ -1,9 +1,13 @@
 import React from 'react'
+import BSNav from '../BSNav'
 
 function About() {
   return (
-    <div style={{textAlign: 'center', fontSize: "50px"}}>
+    <div style={{textAlign: 'center'}}>
       אודות
+
+      <BSNav/>
+
     </div>
   )
 }
