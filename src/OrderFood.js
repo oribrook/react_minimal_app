@@ -66,8 +66,9 @@ export default function OrderFood() {
           salad={salad}
           setSalad={setSalad}
         ></AddOptions>
-        <br />              
-              <LoadingButton loadingTxt={"שולח הזמנה"} onClick={onSubmitOrder}> הזמן </LoadingButton>
+        <br /> 
+        
+        <LoadingButton loadingTxt={"שולח הזמנה"} onClick={onSubmitOrder}> הזמן </LoadingButton>
       </form>
     </>
   );
