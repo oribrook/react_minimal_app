@@ -30,8 +30,8 @@ function App() {
 
       {start && <div>
         <NotesWithoutPagination />
-        {/* <MyInfinitScroll /> */}
-        {/* <Notes /> */}
+        {false && <MyInfinitScroll />}
+        {false && <Notes />}
       </div>}
 
     </div>
