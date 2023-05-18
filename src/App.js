@@ -1,3 +1,4 @@
+import { useState } from "react";
 import MyInfinitScroll from "./MyInfiniteScroll";
 import Notes from "./Notes";
 import NotesWithoutPagination from "./NotesWithoutPagination";
@@ -29,8 +30,8 @@ function App() {
 
       {start && <div>
         <NotesWithoutPagination />
-        <MyInfinitScroll />
-        <Notes />
+        {/* <MyInfinitScroll /> */}
+        {/* <Notes /> */}
       </div>}
 
     </div>
