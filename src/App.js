@@ -15,10 +15,10 @@ function App() {
           <br/>
           <h5> After setting the BE, remove those lines from App component, and uncomment the 'Notes' component </h5>
       </div>
-      {/* <NotesWithoutPagination/> */}
-      {/* <MyInfinitScroll/> */}
-      {/* <button onClick={axiosExample}> Axios example </button> */}
-      {/* <Notes/> */}      
+      <NotesWithoutPagination/>
+      <MyInfinitScroll/>
+      <button onClick={axiosExample}> Axios example </button>
+      <Notes/>      
     </div>
   );
 }
