@@ -16,7 +16,7 @@ function NotesWithoutPagination() {
     <>
       {notes &&
         notes.map((n) => {
-          return <Note note={n} />;
+          return <Note key={n.id} note={n} />;
         })}
     </>
   );

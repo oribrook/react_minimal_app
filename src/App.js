@@ -28,10 +28,10 @@ function App() {
         </div>
       )}
 
-      {start && <div>
-        <NotesWithoutPagination />
-        {false && <MyInfinitScroll />}
-        {false && <Notes />}
+      {start && <div>        
+        {true && <NotesWithoutPagination />}
+        {/* {false && <MyInfinitScroll />} */}
+        {/* {false && <Notes />} */}
       </div>}
 
     </div>

@@ -1,9 +1,17 @@
 import axios from "axios";
 import { SERVER_URL } from "./config";
 
+
 export async function getAllNotes() {
-    const url = SERVER_URL + "notes"
+
+    ///////////////////////////////////////////////////////////////////
+    ////  running with cache:
+    ////  const url = SERVER_URL + "notes/cache_view"  // view cache
+    ////  const url = SERVER_URL + "notes/cache"       // manual cache
+    ///////////////////////////////////////////////////////////////////
     
+    const url = SERVER_URL + "notes"             // no cache    
+        
     try {
         const resJ = await axios.get(url)            
         // const resJ = res.json()
