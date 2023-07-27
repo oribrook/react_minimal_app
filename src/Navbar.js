@@ -7,7 +7,7 @@ function Navbar() {
     return (<>
         <nav className='navbar'>
 
-            <a href='/' className='site-title'> Car-BnB </a>
+            <a href='/' className='site-title'> החנות שלי </a>
             
             <ul className='bar-list'>
                 <li className= {path == '/about' ? 'active' : ""}>
