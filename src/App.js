@@ -8,7 +8,8 @@ function App() {
   console.log(window.location.pathname)
 
   const path = window.location.pathname;
-  let Component 
+  let Component;
+
   switch (path) {
     case "/":
       Component = <Home/>;
@@ -26,7 +27,7 @@ function App() {
 
   return ( <>
     
-    <Navbar></Navbar>      
+    <Navbar/>      
 
     <div style={{textAlign: 'center', 'margin': "1rem"}}>
       {Component}
