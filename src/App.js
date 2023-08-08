@@ -1,18 +1,30 @@
 import { useState } from "react";
 import FileLoader from "./FileLoader";
 import DropZoneFileLoader from "./DropZoneFileLoader";
+import MultipleFilesLoader from "./MultipleFilesLoader";
 
 function App() {
-  const [byDrop, setByDrop] = useState(false)
   return (
     <div>
-      <button onClick={() => { setByDrop((prev) => { return !prev }) }}> change upload style </button>
-      <br /><br /><br />
-      <hr/>
-      
-      {!byDrop && <FileLoader />}
-      
-      {byDrop && <DropZoneFileLoader/>}
+      <hr />
+      <p> Standard file uploader </p>
+      <br />
+      <FileLoader />
+      <br />
+      <br />
+      <br />
+      <hr />
+      <p> Dropzone file uploader </p>
+      <br />
+      <DropZoneFileLoader />
+      <br />
+      <br />
+      <br />
+      <hr />
+      <div> Multiple files uploader </div>
+      <br />
+      <br />
+      <MultipleFilesLoader />
     </div>
   );
 }
