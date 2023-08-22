@@ -13,12 +13,12 @@ function NotesWithoutPagination() {
   }, []);
 
   return (
-    <>
+    <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
       {notes &&
         notes.map((n) => {
           return <Note key={n.id} note={n} />;
         })}
-    </>
+    </div>
   );
 }
 

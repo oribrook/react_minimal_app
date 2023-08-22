@@ -24,7 +24,8 @@ function Notes() {
   }
 
   return (
-    <>      
+    <div >       
+      
       <InfiniteScroll
         loadMore={onLoadMore}
         hasMore={hasMore}
@@ -34,12 +35,15 @@ function Notes() {
           </div>
         }
       >
+        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
         {notes &&
           notes.map((n) => {
             return <Note key={n.id} note={n} />;
           })}
+        </div>
+        
       </InfiniteScroll>
-    </>
+    </div>
   );
 }
 
