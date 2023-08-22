@@ -23,6 +23,7 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/infinite-full-example">Infinite (server)</Nav.Link>
             <Nav.Link as={Link} to="/paging-paginator">Page Num (no server)</Nav.Link>
             <Nav.Link as={Link} to="/paging-server">Page Num (server)</Nav.Link>
+            <Nav.Link as={Link} to="/another-example">practical-example</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -4,6 +4,7 @@ import Notes from "./Notes";
 import NotesWithoutPagination from "./NotesWithoutPagination";
 import SiteRoutes from "./SiteRoutes";
 import NavBar from "./NavBar";
+import Test from "./Test";
 
 function App() {    
   return (
@@ -14,7 +15,7 @@ function App() {
       <br/>
       <div style={{textAlign: 'center', backgroundColor: 'gray', padding: '2%'}}>
         <SiteRoutes/>
-      </div>
+      </div>      
       
             
     </div>

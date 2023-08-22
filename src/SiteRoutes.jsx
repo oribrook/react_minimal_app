@@ -6,6 +6,7 @@ import Notes from './Notes'
 import Home from './Home'
 import PageNumServer from './PageNumServer'
 import PageNumNoServer from './PageNumNoServer'
+import Test from './Test'
 
 const SiteRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const SiteRoutes = () => {
           <Route path='/infinite-full-example' element={ <Notes/>} />
           <Route path='/paging-paginator' element={ <PageNumNoServer/>} />
           <Route path='/paging-server' element={ <PageNumServer/>} />
+          <Route path='/another-example' element={ <Test/>} />
       </Routes>
   )
 }
