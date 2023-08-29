@@ -27,6 +27,9 @@ const NavBar = () => {
             {userLogged && <Nav.Link as={Link} to="/infinite-full-example">
               Notes
             </Nav.Link>}
+            {!userLogged && <Nav.Link as={Link} to="/public-notes">
+              Public Notes
+            </Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>

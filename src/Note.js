@@ -22,9 +22,9 @@ function Note({ note }) {
         <Card.Text>
           {note.content}
         </Card.Text>
-        <Button variant="primary" onClick={() => {
+        {userLogged && <Button variant="primary" onClick={() => {
               editNote(note.id);
-            }}>Edit</Button>
+            }}>Edit</Button>}
       </Card.Body>
       </Card>
            

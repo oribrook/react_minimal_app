@@ -34,6 +34,18 @@ export async function getNotesPagination(pageNum, pageSize) {
         console.log(error)
     }
 }
+export async function getNotesPaginationPublic(pageNum, pageSize) {    
+    const url = `${SERVER_URL}/public-notes?page_num=${pageNum}&page_size=${pageSize}`
+    
+    try {
+        const resJ = await axios.get(url)        
+        console.assert(resJ.status === 200)        
+        return resJ.data
+    } catch (error) {
+        window.alert("Error!")
+        console.log(error)
+    }
+}
 
 export async function editNote(newTitle, newContent, newStatus, noteId) {
     const url = SERVER_URL + `/notes-auth/` + noteId + "/"
