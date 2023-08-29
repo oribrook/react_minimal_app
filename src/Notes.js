@@ -6,20 +6,20 @@ import InfiniteScroll from "react-infinite-scroller";
 
 function Notes() {
   const [notes, setNotes] = useState([]);
-  const [nextPage, setNextPage] = useState(0);
+  const [nextPage, setNextPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
 
   const onLoadMore = async () => {
     const res = await getNotesPagination(nextPage, 10);
-
-    if (!res.has_more) {
+    console.log(res.results);
+    if (!res.next) {
       setHasMore(false)
     }
     setNextPage((prev) => {
       return prev + 1;
     });
-    const newNotes = [...notes, ...res.data];
+    const newNotes = [...notes, ...res.results];
     setNotes(newNotes);
   }
 

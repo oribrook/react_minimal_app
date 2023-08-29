@@ -1,25 +1,33 @@
-import React, { useState } from "react";
-import { Modal } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Button, Card, Modal } from "react-bootstrap";
+import { appContext } from "./App";
+import EditNote from "./EditNote";
 
 function Note({ note }) {
   const [showModal, setShowModal] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
 
+  const { userLogged } = useContext(appContext);
+
+  const editNote = () => {
+    setShowEdit(true)
+  };
   return (
-    <>
-      <div
-        style={{
-          background: "linear-gradient(to right, green, yellow)",
-          border: "dashed yellow 2px",
-          maxWidth: "65%",
-                  minWidth: "65%",
-          margin: '1%'
-        }}
-      >
-        <span onClick={() => setShowModal(true)}>          
-          {note.id} - {note.title}{" "}
-        </span>
-        <p style={{ textAlign: "right" }}> {note.status}</p>
-      </div>
+    <div style={{margin: '25px'}}>
+      <EditNote note={note} show={showEdit} setShow={setShowEdit} />
+      
+      <Card style={{ width: '18rem' }}>      
+      <Card.Body>
+          <Card.Title>{note.title}</Card.Title>
+        <Card.Text>
+          {note.content}
+        </Card.Text>
+        <Button variant="primary" onClick={() => {
+              editNote(note.id);
+            }}>Edit</Button>
+      </Card.Body>
+      </Card>
+           
 
       <Modal
         show={showModal}
@@ -37,7 +45,7 @@ function Note({ note }) {
           <p> {note.status}</p>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 }
 
