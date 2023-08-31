@@ -1,7 +1,3 @@
-import { useEffect, useState } from "react";
-import MyInfinitScroll from "./MyInfiniteScroll";
-import Notes from "./Notes";
-import NotesWithoutPagination from "./NotesWithoutPagination";
 import SiteRoutes from "./SiteRoutes";
 import NavBar from "./NavBar";
 
