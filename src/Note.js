@@ -1,25 +1,18 @@
 import React, { useState } from "react";
-import { Modal } from "react-bootstrap";
+import { Button, Card, Modal } from "react-bootstrap";
 
 function Note({ note }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <div
-        style={{
-          background: "linear-gradient(to right, green, yellow)",
-          border: "dashed yellow 2px",
-          maxWidth: "65%",
-                  minWidth: "65%",
-          margin: '1%'
-        }}
-      >
-        <span onClick={() => setShowModal(true)}>          
-          {note.id} - {note.title}{" "}
-        </span>
-        <p style={{ textAlign: "right" }}> {note.status}</p>
-      </div>
+      <Card style={{ width: "18rem", margin: '2%' }}>
+        <Card.Body onClick={() => setShowModal(true)}>
+          <Card.Title>{note.title}</Card.Title>
+          <Card.Text>ID: {note.id}</Card.Text>      
+        </Card.Body>
+      </Card>
+     
 
       <Modal
         show={showModal}
