@@ -5,6 +5,9 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { appContext } from "./App";
 import { Button } from "react-bootstrap";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+
 
 const NavBar = () => {
   
@@ -28,7 +31,6 @@ const NavBar = () => {
               Notes
             </Nav.Link>}
             {!userLogged && <Nav.Link as={Link} to="/public-notes">
-              Public Notes
             </Nav.Link>}
           </Nav>
         </Navbar.Collapse>
@@ -52,6 +54,7 @@ const NavBar = () => {
               onClick={() => {
                 localStorage.removeItem("token");
                 setUserLogged(false);
+                toast("התנתקת בהצלחה")
                 nav("/login");
               }}
             >

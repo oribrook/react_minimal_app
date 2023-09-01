@@ -2,11 +2,15 @@ import React, { useContext, useState } from "react";
 import { appContext } from "./App";
 import { useNavigate } from "react-router";
 import { getLoginToken, validateToken } from "./client/auth";
+import AlertModal from "./AlertModal";
+import { toast } from "react-toastify";
 
 function Login() {
   const [un, setUn] = useState("");
   const [pw, setPw] = useState("");
   const [error, setError] = useState(false);
+
+  const [showAlert, setShowAlert] = useState(false)
 
   const { setUserLogged, setUserName } = useContext(appContext);
 
@@ -15,10 +19,14 @@ function Login() {
   const handleSubmit = async () => {
     const token = await getLoginToken(un, pw);
     if (token) {
-      setUserLogged(true);
+      setUserLogged(true);   
+      setShowAlert(true)  
+      toast.success("התחברת בהצלחה", {position: 'bottom-right'})
+      toast.error("התחברת בהצלחה")
+    
       const data = await validateToken();
       setUserName(data.user);
-      nav("/");
+    //   nav("/");
     } else {
       setError(true);
     }
@@ -26,6 +34,13 @@ function Login() {
 
   return (
     <>
+     {showAlert && <AlertModal msg="ההתחברות עברה בהצלחה"
+        b1Text="המשך לדף הבית"
+        show={showAlert}    
+        setShow={setShowAlert}
+        handleClickB1={()=>{nav("/")}}
+        />}
+
       <div
         style={{
           textAlign: "center",

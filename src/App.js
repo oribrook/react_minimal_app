@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import SiteRoutes from "./SiteRoutes";
 import NavBar from "./NavBar";
 import { validateToken } from "./client/auth";
+import { ToastContainer } from "react-toastify";
 
 export const appContext = createContext(null);
 
@@ -21,6 +22,8 @@ function App() {
 
   return (
     <div>
+        <ToastContainer position='bottom-left' autoClose={500}/>
+
       <appContext.Provider
         value={{ userLogged, setUserLogged, userName, setUserName }}
       >
@@ -33,6 +36,9 @@ function App() {
           }}
         >
           <SiteRoutes />
+
+
+
         </div>
       </appContext.Provider>
       <br />

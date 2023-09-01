@@ -4,13 +4,14 @@ import { SERVER_URL } from "./config";
 
 export async function getLoginToken(un, pw) {
   try {
-    const res = await axios.post(SERVER_URL + "/obtain-token", {
+    const res = await axios.post(SERVER_URL + "/obtain-token", 
+    {
       username: un,
       password: pw,
     });
-    const token = res.data.token;
-
+    
     if (res.status == 200) {
+      const token = res.data.token;
       localStorage.setItem("token", token);
       return token;
     } else {
@@ -44,6 +45,7 @@ export async function signup(un, pw, email) {
     password: pw,
     email: email,
   };
+  
   try {
     const res = await axios.post(SERVER_URL + "/signup", data);
 
